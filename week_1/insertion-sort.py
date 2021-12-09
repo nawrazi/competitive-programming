@@ -14,11 +14,6 @@ import sys
 #  2. INTEGER_ARRAY arr
 #
 
-def my_print(l):
-    for n in l:
-        print(n, end=' ')
-    print()
-
 def insertionSort1(n, arr):
     num = arr[-1]
     arr_truncated = arr[:-1]
@@ -28,15 +23,15 @@ def insertionSort1(n, arr):
         if arr[i]>num:
             temp = arr_truncated
             temp.insert(i+1,temp[i])
-            my_print(temp)
+            print(*temp)
             temp.pop(i+1)
             if i==0:
                 arr_truncated.insert(0,num)
-                my_print(arr_truncated)
+                print(*temp)
 
         elif arr[i]<num:
             arr_truncated.insert(i+1,num)
-            my_print(arr_truncated)
+            print(*arr_truncated)
             break
 
         i-=1
