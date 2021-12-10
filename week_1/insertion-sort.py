@@ -16,22 +16,16 @@ import sys
 
 def insertionSort1(n, arr):
     num = arr[-1]
-    arr_truncated = arr[:-1]
 
     i = n-1
     while i>=0:
         if arr[i]>num:
-            temp = arr_truncated
-            temp.insert(i+1,temp[i])
-            print(*temp)
-            temp.pop(i+1)
+            print(*arr[:i], arr[i], *arr[i:-1])
             if i==0:
-                arr_truncated.insert(0,num)
-                print(*temp)
+                print(num, *arr[:-1])
 
         elif arr[i]<num:
-            arr_truncated.insert(i+1,num)
-            print(*arr_truncated)
+            print(*arr[:i+1], num, *arr[i+1:-1])
             break
 
         i-=1
