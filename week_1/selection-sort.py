@@ -1,3 +1,5 @@
+# https://practice.geeksforgeeks.org/problems/selection-sort/1
+
 class Solution:
     def select(self, arr_trunc, i):
         return arr_trunc.index(min(arr_trunc)) + i
