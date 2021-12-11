@@ -1,9 +1,10 @@
-class Solution(object):
-    def kClosest(self, points, k):
-        for i in range(len(points)):
-                distance_squared = (points[i][1])**2 + (points[i][0])**2
-                points[i] = [distance_squared, points[i]]
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        distances = []
+        for point in points:
+            distance = point[0]**2 + point[1]**2
+            distances.append([distance,point])
 
-        points.sort(key = lambda point: point[0])
+        distances.sort()
 
-        return [points[i][1] for i in range(k)]
+        return [distances[i][-1] for i in range(k)]
