@@ -1,3 +1,5 @@
+# https://github.com/nawrazi/Competitive-Programming/blob/main/week_1/k-closest-points.py
+
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
         distances = []
