@@ -1,3 +1,5 @@
+# https://github.com/nawrazi/Competitive-Programming/blob/main/week_2/frequency-of-most-frequent.py
+
 class Solution:
     def maxFrequency(self, nums: List[int], k: int) -> int:
         nums.sort(reverse=True)
