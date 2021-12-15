@@ -1,4 +1,4 @@
-# https://github.com/nawrazi/Competitive-Programming/blob/main/week_2/frequency-of-most-frequent.py
+# https://leetcode.com/problems/frequency-of-the-most-frequent-element/submissions/
 
 class Solution:
     def maxFrequency(self, nums: List[int], k: int) -> int:
