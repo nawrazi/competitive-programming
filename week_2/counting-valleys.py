@@ -9,13 +9,10 @@ import sys
 def countingValleys(steps, path):
     level = 0
     valleys = 0
-
     n= len(path)
-
     for i in range(n):
         if path[i]=='U':
             level+=1
-
             if level==0:
                 valleys+=1
         else:
