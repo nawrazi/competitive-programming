@@ -1,32 +1,17 @@
-# INCOMPLETE
-
 # https://leetcode.com/problems/pancake-sorting/submissions/
 
-import random
+class Solution:
+    def pancakeSort(self, arr: List[int]) -> List[int]:
+        ks = []
+        k = len(arr)
+        while k>1:
+            m = arr.index(max(arr[:k]))
+            arr = arr[m::-1] + arr[m+1:]
+            arr = arr[k-1::-1] + arr[k:]
 
-def inOrder(l):
-    for i in range(len(l)):
-        if i != l[i]-1:
-            return False
-    return True
+            ks.append(m+1) if m>0 else None
+            ks.append(k) if k>0 else None
 
-def flip(l):
-    t = l
-    for i in range(len(t)//2):
-        t[i], t[-(i+1)] = t[-(i+1)], t[i]
-    return t
+            k-=1
 
-def pancakeSort(arr):
-    ks = []
-    i=0
-    while not inOrder(arr):
-        k = arr.index(max(arr[i:]))
-        arr = flip(arr[i:k]) + arr[:i] + arr[k:]
-        i+=1
-        ks.append(k)
-
-        print(arr)
-    return ks
-
-x= [1,4,3,2,5,7,8,6]
-print(pancakeSort(x))
+        return ks
