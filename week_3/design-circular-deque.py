@@ -41,8 +41,6 @@ class MyCircularDeque:
         return self.deque[-1] if self.deque else -1
 
     def isEmpty(self) -> bool:
-        print(self.deque)
-        print(not self.deque)
         return not self.deque
 
     def isFull(self) -> bool:
