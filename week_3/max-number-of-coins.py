@@ -7,6 +7,5 @@ class Solution:
         coins = 0
         for i in range(n//3, n, 2):
             coins += piles[i]
-            print(i)
 
         return coins

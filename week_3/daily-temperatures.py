@@ -12,7 +12,6 @@ class Solution:
                 continue
 
             while mono_stack and temperatures[i] > mono_stack[-1][0]:
-                print(temperatures[i])
                 val, index = mono_stack.pop()
                 waits[index] = i - index
 
