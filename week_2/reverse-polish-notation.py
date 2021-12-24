@@ -23,7 +23,6 @@ class Solution:
             elif token=='/':
                 val = stack[-2] / stack[-1]
                 val = math.trunc(val)
-                print(stack, val)
                 stack.pop()
                 stack[-1]=val
 
