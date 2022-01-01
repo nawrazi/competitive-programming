@@ -7,7 +7,7 @@ class Solution:
 
         prev = self.recur(n-1)
 
-        inverse = [('0' if l=='1' else '1') for l in prev]
+        inverse = [('0' if bit=='1' else '1') for bit in prev]
         reverse = ''.join(inverse[::-1])
 
         return prev + '1' + reverse
