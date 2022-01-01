@@ -5,7 +5,7 @@ class Solution:
         changed.sort()
         original, references, ans = [], {}, []
 
-        if set(changed) =={0} and len(changed)%2==0:
+        if set(changed)=={0} and len(changed)%2==0:
             return [0]*(len(changed)//2)
 
         for num in changed:
