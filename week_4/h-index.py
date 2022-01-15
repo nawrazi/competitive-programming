@@ -12,4 +12,4 @@ class Solution:
             if citations[i]>=papers:
                 max_papers = papers
 
-        return maxim
+        return max_papers
