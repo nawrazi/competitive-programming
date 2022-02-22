@@ -2,22 +2,26 @@
 
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        dict = {}
+        d = {}
 
         for num in nums:
-            if num in dict:
-                dict[num] += 1
+            if num in d:
+                d[num] += 1
                 continue
 
-            dict[num]=1
+            d[num]=1
 
-        keys = list(dict.keys())
-        vals = list(dict.values())
+        tuples = []
+        for num in nums:
+            tuples.append((d[num]*-1,num))
 
-        final = []
+        tuples = list(set(tuples))
+
+        heapq.heapify(tuples)
+        final=[]
+
         for i in range(k):
-            ind = vals.index(max(vals))
-            vals.pop(ind)
-            final.append(keys.pop(ind))
+            _,item = heapq.heappop(tuples)
+            final.append(item)
 
         return final
