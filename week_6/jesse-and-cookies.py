@@ -1,3 +1,5 @@
+# https://www.hackerrank.com/challenges/jesse-and-cookies/problem
+
 def cookies(k, A):
     n = len(A)
     heap = A
