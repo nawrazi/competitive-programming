@@ -15,6 +15,4 @@ class Solution:
             else:
                 left = mid+1
 
-        print(best)
-
         return len(citations)-best if best!=-1 else 0
