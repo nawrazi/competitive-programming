@@ -5,16 +5,16 @@
 
 class Solution:
     def firstBadVersion(self, n: int) -> int:
-        if n==1: return 1
-        if n==2: return 1 if isBadVersion(1) else 2
+        start, end = 1, n
+        best = n
 
-        current, best = n//2, n
+        while start<=end:
+            mid = (start+end)//2
 
-        while best!=current:
-            if isBadVersion(current):
-                best = current
-                current = current//2
+            if isBadVersion(mid):
+                best = mid
+                end = mid-1
             else:
-                current = current + current//2
+                start = mid+1
 
         return best
