@@ -1,4 +1,4 @@
-https://codeforces.com/problemset/problem/1251/A
+# https://codeforces.com/problemset/problem/1251/A
 
 def checker(string):
     length = len(string)
