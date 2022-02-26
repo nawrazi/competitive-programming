@@ -1,3 +1,3 @@
-# Competitive-Programming
+# competitive-programming
 
-Solutions to Leetcode and HackerRank problems, implemented in both Python and Kotlin.
+Solutions to Leetcode and HackerRank problems, implemented in Python and sometimes Kotlin.
