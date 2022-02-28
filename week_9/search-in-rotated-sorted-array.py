@@ -7,8 +7,8 @@ class Solution:
         while start<end:
             mid = (start+end)//2
 
-            # if start==end-1 and nums[start]>nums[end]:
-            #     return end
+            if start==end-1 and nums[start]>nums[end]:
+                return end
 
             if nums[mid]>nums[end]:
                 start = mid
