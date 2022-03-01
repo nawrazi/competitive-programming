@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/minimum-time-to-complete-trips/
+
 class Solution:
     def findTime(self, time, n):
         total = 0
@@ -14,7 +16,7 @@ class Solution:
         while start<=end:
             mid = (start+end)//2
             total = self.findTime(time, mid)
-            
+
             if total >= totalTrips:
                 best = mid
                 end = mid-1
