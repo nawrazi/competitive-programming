@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/average-of-levels-in-binary-tree/
+
 class Solution:
     def averageOfLevels(self, root: Optional[TreeNode]) -> List[float]:
         q = deque([(root,0)])
