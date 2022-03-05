@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/binary-tree-tilt/submissions/# Definition for a binary tree node.
+# https://leetcode.com/problems/binary-tree-tilt/
 
 class Solution:
     def findTilt(self, root: Optional[TreeNode]) -> int:

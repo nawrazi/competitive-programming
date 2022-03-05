@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/find-original-array-from-doubled-array/submissions/
+# https://leetcode.com/problems/find-original-array-from-doubled-array/
 
 class Solution:
     def findOriginalArray(self, changed: List[int]) -> List[int]:

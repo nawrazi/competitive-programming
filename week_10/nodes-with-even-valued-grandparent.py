@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/submissions/
+# https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
 
 class Solution:
     def sumEvenGrandparent(self, root: TreeNode) -> int:

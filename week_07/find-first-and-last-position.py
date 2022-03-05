@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/submissions/
+# https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 
 class Solution:
     def search(self, nums, target, isLeft):

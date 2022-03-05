@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/submissions/
+# https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/
 
 class Solution:
     def search(self,row):

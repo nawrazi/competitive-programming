@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/search-in-rotated-sorted-array/submissions/
+# https://leetcode.com/problems/search-in-rotated-sorted-array/
 
 class Solution:
     def findPivot(self, nums):

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/arithmetic-subarrays/submissions/
+# https://leetcode.com/problems/arithmetic-subarrays/
 
 def checkArithmeticSubarrays(nums, l, r):
     n = len(l)

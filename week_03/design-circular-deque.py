@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/design-circular-deque/submissions/
+# https://leetcode.com/problems/design-circular-deque/
 
 class MyCircularDeque:
 

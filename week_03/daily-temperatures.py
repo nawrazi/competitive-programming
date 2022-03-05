@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/daily-temperatures/submissions/
+# https://leetcode.com/problems/daily-temperatures/
 
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:

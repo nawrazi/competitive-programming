@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/count-good-numbers/submissions/
+# https://leetcode.com/problems/count-good-numbers/
 
 class Solution:
     def countGoodNumbers(self, n: int) -> int:

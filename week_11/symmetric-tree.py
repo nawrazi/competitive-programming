@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/symmetric-tree/submissions/
+# https://leetcode.com/problems/symmetric-tree/
 
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:

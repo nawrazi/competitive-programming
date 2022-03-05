@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/merge-k-sorted-lists/submissions/
+# https://leetcode.com/problems/merge-k-sorted-lists/
 
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:

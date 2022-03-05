@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/binary-search/submissions/
+# https://leetcode.com/problems/binary-search/
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:

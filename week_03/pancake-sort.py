@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/pancake-sorting/submissions/
+# https://leetcode.com/problems/pancake-sorting/
 
 class Solution:
     def pancakeSort(self, arr: List[int]) -> List[int]:

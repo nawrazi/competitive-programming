@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/sorting-the-sentence/submissions/
+# https://leetcode.com/problems/sorting-the-sentence/
 
 class Solution:
     def sortSentence(self, s: str) -> str:

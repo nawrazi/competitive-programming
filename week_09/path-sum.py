@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/path-sum/submissions/
+# https://leetcode.com/problems/path-sum/
 
 class Solution:
     def hasPathSum(self, root: Optional[TreeNode], targetSum: int) -> bool:

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/remove-duplicates-from-sorted-list/submissions/
+# https://leetcode.com/problems/remove-duplicates-from-sorted-list/
 
 class ListNode:
     def __init__(self, val=0, next=None):

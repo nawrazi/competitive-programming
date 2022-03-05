@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/submissions/
+# https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/
 
 class Solution:
     def findSum(self, nums, divisor):

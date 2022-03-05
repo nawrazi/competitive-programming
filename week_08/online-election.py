@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/online-election/submissions/
+# https://leetcode.com/problems/online-election/
 
 class TopVotedCandidate:
 

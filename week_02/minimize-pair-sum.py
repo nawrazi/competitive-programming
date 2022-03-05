@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/submissions/
+# https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/
 
 class Solution:
     def minPairSum(self, nums: List[int]) -> int:

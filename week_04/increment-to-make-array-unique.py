@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/minimum-increment-to-make-array-unique/submissions/
+# https://leetcode.com/problems/minimum-increment-to-make-array-unique/
 
 class Solution:
     def minIncrementForUnique(self, nums: List[int]) -> int:

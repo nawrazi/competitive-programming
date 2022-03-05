@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/number-of-enclaves/submissions/
+# https://leetcode.com/problems/number-of-enclaves/
 
 class Solution:
     def numEnclaves(self, grid: List[List[int]]) -> int:

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/find-the-duplicate-number/submissions/
+# https://leetcode.com/problems/find-the-duplicate-number/
 
 class Solution:
     def count(self, nums, mid, end):

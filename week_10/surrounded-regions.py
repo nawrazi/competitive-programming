@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/surrounded-regions/submissions/
+# https://leetcode.com/problems/surrounded-regions/
 
 class Solution:
     def solve(self, board: List[List[str]]) -> None:

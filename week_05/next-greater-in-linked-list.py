@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/next-greater-node-in-linked-list/submissions/
+# https://leetcode.com/problems/next-greater-node-in-linked-list/
 
 class ListNode:
     def __init__(self, val=0, next=None):

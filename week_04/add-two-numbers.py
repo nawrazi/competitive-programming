@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/add-two-numbers/submissions/
+# https://leetcode.com/problems/add-two-numbers/
 
 class ListNode:
     def __init__(self, val=0, next=None):

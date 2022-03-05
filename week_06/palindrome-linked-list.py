@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/palindrome-linked-list/submissions/
+# https://leetcode.com/problems/palindrome-linked-list/
 
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:

@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/delete-node-in-a-linked-list/submissions/
+# https://leetcode.com/problems/delete-node-in-a-linked-list/
 
 class ListNode:
     def __init__(self, x):

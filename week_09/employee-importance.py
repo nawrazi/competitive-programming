@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/employee-importance/submissions/
+# https://leetcode.com/problems/employee-importance/
 
 class Solution:
     def getImportance(self, employees: List['Employee'], id: int) -> int:

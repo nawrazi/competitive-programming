@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/array-with-elements-not-equal-to-average-of-neighbors/submissions/
+# https://leetcode.com/problems/array-with-elements-not-equal-to-average-of-neighbors/
 
 class Solution:
     def rearrangeArray(self, nums: List[int]) -> List[int]:

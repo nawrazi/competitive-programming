@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/h-index-ii/submissions/
+# https://leetcode.com/problems/h-index-ii/
 
 class Solution:
     def hIndex(self, citations: List[int]) -> int:

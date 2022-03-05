@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/number-of-recent-calls/submissions/
+# https://leetcode.com/problems/number-of-recent-calls/
 
 class RecentCounter:
 

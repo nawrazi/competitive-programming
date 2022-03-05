@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/submissions/
+# https://leetcode.com/problems/find-kth-bit-in-nth-binary-string/
 
 class Solution:
     def recur(self,n):

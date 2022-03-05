@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/largest-number/submissions/
+# https://leetcode.com/problems/largest-number/
 
 class Solution:
     def largestNumber(self, nums: List[int]) -> str:

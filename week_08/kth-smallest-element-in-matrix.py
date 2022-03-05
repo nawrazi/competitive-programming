@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/submissions/
+# https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
 
 class Solution:
     def kthSmallest(self, matrix: List[List[int]], k: int) -> int:
