@@ -1,3 +1,5 @@
+# https://codeforces.com/gym/371751/problem/B
+
 def isGood(difficulty):
     median = (len(students) - 1) // 2
 
