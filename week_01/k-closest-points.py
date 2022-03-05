@@ -1,4 +1,4 @@
-# https://github.com/nawrazi/Competitive-Programming/blob/main/week_1/k-closest-points.py
+# https://leetcode.com/problems/k-closest-points-to-origin/
 
 class Solution:
     def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
