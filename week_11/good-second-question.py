@@ -8,13 +8,11 @@ def isGood(difficulty):
 
     return not too_hard and not too_easy
 
-
 def solve(students, questions):
     for difficulty in questions:
         good = isGood(difficulty)
         output = 'YES' if good else 'NO'
         print(output)
-
 
 n, m = [int(i) for i in input().split()]
 students = sorted([int(n) for n in input().split()])
