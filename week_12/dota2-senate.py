@@ -3,15 +3,9 @@
 class Solution:
     def predictPartyVictory(self, senate: str) -> str:
         state = 0
-        count = {'Radiant': 0, 'Dire': 0}
+        count = {'Radiant': senate.count('R'), 'Dire': senate.count('D')}
         eliminated = set()
-
-        for party in senate:
-            if party == 'R':
-                count['Radiant'] += 1
-            else:
-                count['Dire'] += 1
-
+        
         while count['Radiant'] > 0 and count['Dire'] > 0:
             for member, party in enumerate(senate):
                 if party == 'R' and member not in eliminated:
