@@ -16,7 +16,6 @@ def solve(nums):
 
     print(output)
 
-
 t = int(input())
 for _ in range(t):
     _ = int(input())
