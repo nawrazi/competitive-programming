@@ -22,4 +22,4 @@ class Solution:
         mem = {}
         inBound = lambda r,c : r < len(grid) and c < len(grid[0])
 
-        return find(0, 0)
+        return find(0,0)
