@@ -8,16 +8,14 @@ class Solution:
         if n==1 or n==0:
             return n
 
-        if n-1 in self.mem:
-            one_back = self.mem[n-1]
-        else:
-            one_back = self.fib(n-1)
-            self.mem[n-1] = one_back
+        cur_sum = 0
+        for move in [n-1, n-2]:
+            if move in self.mem:
+                move_result = self.mem[move]
+            else:
+                move_result = self.fib(move)
+                self.mem[move] = move_result
 
-        if n-2 in self.mem:
-            two_back = self.mem[n-2]
-        else:
-            two_back = self.fib(n-2)
-            self.mem[n-2] = two_back
+            cur_sum += move_result
 
-        return one_back + two_back
+        return cur_sum
