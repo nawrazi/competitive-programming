@@ -12,17 +12,14 @@ class Solution:
                 continue
 
             climb = heights[i+1] - heights[i]
-            if ladders == 0:
-                bricks -= climb
-
-            elif len(heap) < ladders:
+            if len(heap) < ladders:
                 heapq.heappush(heap, climb)
+
+            elif ladders == 0 or climb <= heap[0]:
+                bricks -= climb
 
             elif climb > heap[0]:
                 bricks -= heapq.heappop(heap)
                 heapq.heappush(heap, climb)
 
-            elif climb <= heap[0]:
-                bricks -= climb
-                
         return i if bricks < 0 else i + 1
