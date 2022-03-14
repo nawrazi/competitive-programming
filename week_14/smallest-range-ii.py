@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/smallest-range-ii/submissions/
+# https://leetcode.com/problems/smallest-range-ii/
 
 class Solution:
     def smallestRangeII(self, nums: List[int], k: int) -> int:
