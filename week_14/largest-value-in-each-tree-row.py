@@ -19,4 +19,5 @@ class Solution:
             q.append((node.left, level + 1))
             q.append((node.right, level + 1))
 
-        return list(level_max.values())
+        return level_max.values()
+    
