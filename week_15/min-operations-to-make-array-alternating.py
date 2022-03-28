@@ -10,8 +10,8 @@ class Solution:
             else:
                 odds[num] += 1
 
-        oddList = sorted([(n, odds[n]) for n in odds] + [(99,0)], key = lambda x : x[1])
-        evenList = sorted([(n, evens[n]) for n in evens] + [(99,0)], key = lambda x : x[1])
+        oddList = sorted([(n,odds[n]) for n in odds] + [(99,0)], key = lambda x: x[1])
+        evenList = sorted([(n,evens[n]) for n in evens] + [(99,0)], key = lambda x: x[1])
 
         finalEven = evenList[-1][1]
         finalOdd = oddList[-1][1]
