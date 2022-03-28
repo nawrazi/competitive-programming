@@ -1,4 +1,4 @@
-# https://leetcode.com/problems/minimum-operations-to-make-the-array-alternating
+# https://leetcode.com/problems/minimum-operations-to-make-the-array-alternating/
 
 class Solution:
     def minimumOperations(self, nums: List[int]) -> int:
