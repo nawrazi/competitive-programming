@@ -13,10 +13,9 @@ class Solution:
             elif par == '(':
                 locked_openers.append(i)
             else:
-                if len(locked_openers) > 0:
-                    locked_openers.pop()
-                elif len(unlocked_pars) > 0:
-                    unlocked_pars.pop()
+                closable = locked_openers or unlocked_pars
+                if closable:
+                    closable.pop()
                 else:
                     return False
 
