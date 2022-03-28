@@ -17,13 +17,9 @@ class Solution:
         finalOdd = oddList[-1][1]
 
         if oddList[-1][0] == evenList[-1][0]:
-            if evenList[-1][1] == evenList[-2][1]:
-                finalEven = evenList[-2][1]
-            elif oddList[-1][1] == oddList[-2][1]:
+            if oddList[-1][1] == oddList[-2][1] or evenList[-2][1] <= oddList[-2][1]:
                 finalOdd = oddList[-2][1]
-            elif evenList[-2][1] > oddList[-2][1]:
-                finalEven = evenList[-2][1]
             else:
-                finalOdd = oddList[-2][1]
+                finalEven = evenList[-2][1]
 
         return (ceil(len(nums) / 2) - finalEven) + (floor(len(nums) / 2) - finalOdd)
