@@ -2,9 +2,6 @@
 
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        if numRows == 1:
-            return [[1]]
-
         triangle = [[1],[1,1]]
 
         for i in range(2, numRows):
@@ -14,4 +11,4 @@ class Solution:
 
             triangle.append(row + [1])
 
-        return triangle
+        return triangle if numRows > 1 else [triangle[0]]
