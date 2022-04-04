@@ -2,11 +2,10 @@
 
 def superReducedString(s, changed=False):
     i, j = 0, 1
-    n = len(s)
     l = list(s)
 
-    while j<n:
-        if l[j]==l[i]:
+    while j < len(s):
+        if l[j] == l[i]:
             l.pop(i)
             l.pop(i)
             changed = True
@@ -17,7 +16,7 @@ def superReducedString(s, changed=False):
     if changed:
         return superReducedString(''.join(l), False)
 
-    if l==[]:
+    if l == []:
         return 'Empty String'
 
     return ''.join(l)

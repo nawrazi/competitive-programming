@@ -4,17 +4,16 @@ def pairs(k, arr):
     arr.sort()
     count = 0
     i, j = 0, 0
-    length = len(arr)
 
-    while j<length:
+    while j < len(arr):
         diff = arr[j] - arr[i]
 
-        if diff==k:
-            count+=1
-            j+=1
-        elif diff>k:
-            i+=1
-        elif diff<k:
-            j+=1
+        if diff == k:
+            count += 1
+            j += 1
+        elif diff > k:
+            i += 1
+        elif diff < k:
+            j += 1
 
     return count
