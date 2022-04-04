@@ -1,3 +1,3 @@
 # competitive-programming
 
-Solutions to Leetcode and HackerRank problems, implemented in Python and sometimes Kotlin. Weekly submissions starting from December 9, 2021.
+Solutions to Leetcode, Codeforces and Hackerrank problems as part of [A2SV](https://a2sv.org/). Weekly submissions starting from December 9, 2021.
