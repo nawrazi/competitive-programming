@@ -17,8 +17,7 @@ class Solution:
 
         for i, (pre, course) in enumerate(relations):
             graph[course].append(pre)
-            graph[i + 1]
-        
+
         graph[n + 1] = [i + 1 for i in range(n)]
         time.append(0)
 
