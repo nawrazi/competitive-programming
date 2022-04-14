@@ -13,4 +13,3 @@ class Solution:
             return turn * max(turn * choose_left, turn * choose_right)
 
         return findWinner(0, len(nums) - 1, 1) >= 0
-        
