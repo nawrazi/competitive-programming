@@ -6,12 +6,7 @@ class Solution:
         picked, max_picked = 0, 0
 
         for i, fruit in enumerate(fruits):
-            if len(last_seen) < 2:
-                last_seen[fruit] = i
-                picked += 1
-                continue
-
-            most_recent = max(last_seen.values())
+            most_recent = max(last_seen.values()) if last_seen else 0
 
             if fruits[i] in last_seen:
                 if last_seen[fruit] != most_recent:
