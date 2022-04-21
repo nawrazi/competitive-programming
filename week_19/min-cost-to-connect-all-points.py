@@ -33,12 +33,12 @@ class Solution:
                 dist = distance(i, j)
                 heappush(heap, (dist, i, j))
 
-        total = 0
+        min_cost = 0
         connected = 0
         while heap and connected < len(points):
             dist, point1, point2 = heappop(heap)
             if union(point1, point2):
-                total += dist
+                min_cost += dist
                 connected += 1
 
-        return total
+        return min_cost
