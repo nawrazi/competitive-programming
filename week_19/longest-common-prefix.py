@@ -3,7 +3,7 @@
 class Solution:
     def longestCommonPrefix(self, strs: List[str]) -> str:
         prefix = ""
-        for i in range(199):
+        for i in range(200):
             if i >= len(strs[0]):
                 return prefix
 
