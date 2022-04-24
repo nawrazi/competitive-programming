@@ -1,3 +1,5 @@
+# https://codeforces.com/problemset/problem/1668/A
+
 def solve(rows, cols):
     if min(rows, cols) == 1 and max(rows, cols) > 2:
         return -1
