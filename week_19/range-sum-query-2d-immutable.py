@@ -25,6 +25,7 @@ class NumMatrix:
                 inter_se_sum = self.inter_se[(_i+1,_j)] + self.inter_se[(_i,_j+1)]
                 inter_ne_sum = self.inter_ne[(i-1,_j)] + self.inter_ne[(i,_j+1)]
                 inter_sw_sum = self.inter_sw[(_i+1,j)] + self.inter_sw[(_i,j-1)]
+
                 self.inter_nw[(i,j)] = inter_nw_sum - self.inter_nw[(i-1,j-1)] + matrix[i][j]
                 self.inter_se[(_i,_j)] = inter_se_sum - self.inter_se[(_i+1,_j+1)] + matrix[_i][_j]
                 self.inter_ne[(i,_j)] = inter_ne_sum - self.inter_ne[(i-1,_j+1)] + matrix[i][_j]
