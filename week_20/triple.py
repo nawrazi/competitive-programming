@@ -1,3 +1,5 @@
+# https://codeforces.com/gym/380193/problem/A
+
 from collections import defaultdict
 
 def solve(nums):

@@ -1,3 +1,5 @@
+# https://codeforces.com/gym/380193/problem/B
+
 def solve(cities, tank):
     if tank > cities:
         print(cities - 1)

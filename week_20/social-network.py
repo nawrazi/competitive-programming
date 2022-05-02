@@ -1,3 +1,5 @@
+# https://codeforces.com/gym/380193/problem/D
+
 from heapq import *
 
 class DisjointSet:
