@@ -26,7 +26,6 @@ class Solution:
     def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
         dj = DisjointSet(len(edges))
         
-        redudndant = None
         for node1, node2 in edges:
             if not dj.union(node1, node2):
                 redundant = [node1, node2]
