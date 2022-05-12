@@ -3,7 +3,6 @@
 class Node:
     def __init__(self):
         self.children = {}
-        self.end = False
 
 class Solution:
     def __init__(self):
@@ -13,6 +12,7 @@ class Solution:
     def addWord(self, word):
         node = self.parent
         cur_word = []
+        
         for i, c in enumerate(word):
             if c not in node.children:
                 if i < len(word) - 1:
@@ -20,7 +20,6 @@ class Solution:
                 node.children[c] = Node()
             cur_word.append(c)
             node = node.children[c]
-        node.end = True
         
         if len(cur_word) > len(self.longest):
             self.longest = cur_word
@@ -30,4 +29,4 @@ class Solution:
             self.addWord(word)
             
         return ''.join(self.longest)
-        
+    
