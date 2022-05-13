@@ -27,8 +27,8 @@ class Trie:
         def get(node):
             if node.count > 0:
                 heappush(words, (-node.count, node.word))
-            for nex in node.children:
-                get(node.children[nex])
+            for c in node.children:
+                get(node.children[c])
             
         words = []
         get(self.root)
