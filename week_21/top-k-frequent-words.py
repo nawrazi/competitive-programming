@@ -6,7 +6,6 @@ class Node:
         self.count = 0
         self.word = ''
         
-
 class Trie:
     def __init__(self, words):
         self.root = Node()
@@ -34,7 +33,6 @@ class Trie:
         get(self.root)
         return words
 
-    
 class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
         trie = Trie(words)
