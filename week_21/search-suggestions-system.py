@@ -1,19 +1,22 @@
 # https://leetcode.com/problems/search-suggestions-system/
 
 class Node:
-    def __init__(self, char):
+    def __init__(self):
         self.children = {}
         self.word = ''
         
 class Trie:
-    def __init__(self):
-        self.root = Node("")
+    def __init__(self, words):
+        self.root = Node()
+        
+        for word in words:
+            self.addWord(word)
         
     def addWord(self, word):
         node = self.root
         for c in word:
             if c not in node.children:
-                node.children[c] = Node(c)
+                node.children[c] = Node()
             node = node.children[c]
             
         node.word = word
@@ -40,9 +43,7 @@ class Trie:
 
 class Solution:
     def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
-        trie = Trie()
-        for word in products:
-            trie.addWord(word)
+        trie = Trie(products)
             
         result = []
         for i in range(len(searchWord)):
