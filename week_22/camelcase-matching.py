@@ -1,22 +1,19 @@
 # https://leetcode.com/problems/camelcase-matching/
 
 class Node:
-    def __init__(self, c):
-        self.c = c
-        self.children = {}
+    def __init__(self):
+        self.children = defaultdict(Node)
         self.word = ""
         
 class Trie:
     def __init__(self, words):
-        self.root = Node("")
+        self.root = Node()
         for word in words:
             self.add(word)
         
     def add(self, word):
         node = self.root
         for c in word:
-            if c not in node.children:
-                node.children[c] = Node(c)
             node = node.children[c]
         node.word = word
         
