@@ -1,3 +1,5 @@
+# https://codeforces.com/gym/383731/problem/A
+
 s1 = input().lower()
 s2 = input().lower()
 
