@@ -24,7 +24,8 @@ class SmallestInfiniteSet:
         if num < self.inf_set[-1]:
             self.inf_set.append(num)
             self.inf_set.popleft()
-            self.popped.remove(num)
         else:
             heappush(self.reserves, num)
             
+        self.popped.remove(num)
+        
