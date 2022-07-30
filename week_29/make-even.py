@@ -1,12 +1,12 @@
+# https://codeforces.com/gym/392476/problem/A
+
 t = int(input())
 for _ in range(t):
     num = input()
     if int(num[-1]) % 2 == 0:
         print(0)
-        continue
     elif int(num[0]) %2 == 0:
         print(1)
-        continue
     else:
         found = False
         for n in num:
@@ -16,3 +16,4 @@ for _ in range(t):
                 break
         if not found:
             print(-1)
+            
