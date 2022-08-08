@@ -9,24 +9,16 @@ class Solution:
             left_has = search(node.left) if node.left else False
             right_has = search(node.right) if node.right else False
             
-            if not left_has and not right_has:
-                if node.val == 1:
-                    node.left = None
-                    node.right = None
-                    return True
-                else:
-                    return False
-            
-            elif not left_has:
+            if not left_has:
                 node.left = None
-                return True
-            
-            elif not right_has:
+                
+            if not right_has:
                 node.right = None
-                return True
             
-            else:
-                return True
+            if not left_has and not right_has and node.val != 1:
+                return False
+            
+            return True
             
         return root if search(root) else None
     
