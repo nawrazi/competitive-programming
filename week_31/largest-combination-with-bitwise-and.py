@@ -5,9 +5,10 @@ class Solution:
         counts = defaultdict(int)
         for num in candidates:
             mask = 1
-            for _ in range(32):
+            for _ in range(24):
                 if num & mask != 0:
                     counts[mask] += 1
                 mask <<= 1
+                
         return max(counts.values())
     
