@@ -16,8 +16,7 @@ class Solution:
                 visits = max(visits, getVisits(nex))
                 
             for jump in range(1, d + 1):
-                jump = -jump
-                nex = idx + jump
+                nex = idx - jump
                 if not inBound(nex):
                     continue
                 if arr[nex] >= arr[idx]:
