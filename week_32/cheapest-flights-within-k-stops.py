@@ -3,15 +3,13 @@
 class Solution:
     def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
         graph = defaultdict(list)
-        best = {}
         
         for start, end, cost in flights:
             graph[start].append((end, cost))
-            best[start] = (inf, inf)
-            best[end] = (inf, inf)
             
         heap = [(0, 0, src)]
-
+        best = defaultdict(lambda : (inf, inf))
+        
         while heap:
             cur_cost, cur_stops, cur_node = heappop(heap)
 
@@ -26,6 +24,6 @@ class Solution:
                 if next_cost < best[nex][0] or next_stops < best[nex][1]:
                     heappush(heap, (next_cost, next_stops, nex))
                     best[nex] = (next_cost, next_stops)
-                    
+
         return -1
     
