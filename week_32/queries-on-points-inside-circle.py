@@ -7,7 +7,7 @@ class Solution:
         for cx, cy, r in queries:
             inside = 0
             for x, y in points:
-                if ((cx - x) ** 2 + (cy - y) ** 2) ** 0.5 <= r:
+                if (cx - x) ** 2 + (cy - y) ** 2 <= r ** 2:
                     inside += 1
             answer.append(inside)
             
