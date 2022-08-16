@@ -11,9 +11,9 @@ class Solution:
             seen.remove(idx)
             return size
         
+        seen = set()
         max_size = 0
         for i in range(len(nums)):
-            seen = set()
             max_size = max(max_size, search(i))
         
         return max_size
