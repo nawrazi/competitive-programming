@@ -25,4 +25,3 @@ class Solution:
                 
         getArrangements(0)
         return self.arrangements
-    
