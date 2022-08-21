@@ -10,7 +10,7 @@ class Solution:
         def dfs(rim, row, col, up):
             cur = matrix[row][col]
             
-            if len(queue) == rimSize[i] and (row, col) not in replaced:
+            if len(queue) == rimSize[rim] and (row, col) not in replaced:
                 matrix[row][col] = queue.popleft()
                 replaced.add((row, col))
             elif replaced:
@@ -22,9 +22,9 @@ class Solution:
                 seen.add((row, col))
                 
             for x, y in directions if not up else reversed(directions):
-                new_row, new_col = row + x, col + y
-                if (new_row, new_col) not in seen and inBound(new_row, new_col, rim):
-                    dfs(rim, new_row, new_col, (x,y) == (-1,0))
+                r, c = row + x, col + y
+                if (r, c) not in seen and inBound(r, c, rim):
+                    dfs(rim, r, c, (x,y) == (-1,0))
                     return
                 
         for i in range(len(matrix) // 2):
