@@ -14,5 +14,5 @@ class Solution:
             size += int(s[i])
             i += 1
             
-        return Counter(s[:n])['1']
+        return s[:n].count('1')
     
