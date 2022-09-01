@@ -8,7 +8,7 @@ class Solution:
             side = []
             
             if not single:
-                center = [s[idx], s[j]]
+                center.append(s[j])
                 j += 1
                 
             while i >= 0 and j < len(s) and s[i] == s[j]:
