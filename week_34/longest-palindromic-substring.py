@@ -3,19 +3,19 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
         def getPalindrome(idx, single):
-            if single:
-                i, j = idx - 1, idx + 1
-                center = [s[idx]]
-            else:
-                i, j = idx - 1, idx + 2
-                center = [s[idx], s[idx + 1]]
+            i, j = idx - 1, idx + 1
+            center = [s[idx]]
             side = []
+            
+            if not single:
+                center = [s[idx], s[j]]
+                j += 1
                 
             while i >= 0 and j < len(s) and s[i] == s[j]:
                 side.append(s[i])
                 i -= 1
                 j += 1
-            
+                
             return list(reversed(side)) + center + side
         
         longest = ''
