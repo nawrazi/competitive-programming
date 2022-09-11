@@ -17,7 +17,7 @@ class Solution:
                 limit -= 1
                 count -= 1
                 idx = i
-                while idx < len(nums) - 1:
+                while idx < limit:
                     nums[idx], nums[idx + 1] = nums[idx + 1], nums[idx]
                     idx += 1
                 continue
