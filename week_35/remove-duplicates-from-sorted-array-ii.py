@@ -2,25 +2,27 @@
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        dup = []
         cur = nums[0]
         count = 1
-        for i in range(1, len(nums)):
+        limit = len(nums)
+        
+        i = 1
+        while i < limit:
             if nums[i] == cur:
                 count += 1
             else:
                 cur = nums[i]
                 count = 1
             if count > 2:
-                dup.append(i)
-                count += 1
-            
-        slots = len(nums) - len(dup)
-        while dup:
-            idx = dup.pop()
-            while idx < len(nums) - 1:
-                nums[idx], nums[idx + 1] = nums[idx + 1], nums[idx]
-                idx += 1
+                limit -= 1
+                count -= 1
+                idx = i
+                while idx < len(nums) - 1:
+                    nums[idx], nums[idx + 1] = nums[idx + 1], nums[idx]
+                    idx += 1
+                continue
                 
-        return slots
+            i += 1
+            
+        return limit
     
