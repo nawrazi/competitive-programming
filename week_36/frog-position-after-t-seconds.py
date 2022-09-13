@@ -7,13 +7,12 @@ class Solution:
             graph[s].add(e)
             graph[e].add(s)
             
-        children = {n: len(c) for n, c in graph.items()}
         q = deque([(1, 1, 0)])
         seen = {1}
         final = 1
         while q:
             node, prob, time = q.popleft()
-            c = children.get(node, 0)
+            c = len(graph[node]) - 1 if node != 1 else len(graph[1])
             
             if node == target:
                 if time == t or (time < t and c == 0):
@@ -29,7 +28,6 @@ class Solution:
                 if nex not in seen:
                     q.append((nex, prob / c, time + 1))
                     seen.add(nex)
-                    children[nex] -= 1
                     
         return final
     
