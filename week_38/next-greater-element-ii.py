@@ -12,5 +12,5 @@ class Solution:
                     
                 mono_stack.append((num, i))
                 
-        return [(d[i] if i in d.keys() else -1) for i in range(len(nums))]
+        return [d.get(i, -1) for i in range(len(nums))]
     
