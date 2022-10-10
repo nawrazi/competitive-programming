@@ -9,11 +9,11 @@ class Solution:
             graph[s].append((e, 1))
             
         def search(target):
-            h = [(0, 0, -1)]
+            q = deque([(0, 0, -1)])
             best = defaultdict(lambda: [inf, inf])
             
-            while h:
-                dist, node, last = heappop(h)
+            while q:
+                dist, node, last = q.popleft()
                 
                 if node == target:
                     return dist
@@ -22,7 +22,7 @@ class Solution:
                     nex_dist = dist + 1
                     if nex_dist > best[nex][col] or col == last:
                         continue
-                    heappush(h, (nex_dist, nex, col))
+                    q.append((nex_dist, nex, col))
                     best[nex][col] = nex_dist
                     
             return -1
