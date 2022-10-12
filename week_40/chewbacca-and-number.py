@@ -2,12 +2,12 @@
 
 n = input()
 a = ''
-ii = 0
+i = 0
 if n[0] == '9':
-    ii += 1
+    i += 1
     a += '9'
 
-for c in n[ii:]:
+for c in n[i:]:
     if int(c) >= 5:
         a += str(9 - int(c))
     else:
