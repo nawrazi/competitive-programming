@@ -3,13 +3,10 @@
 from collections import defaultdict
 
 n, m = [int(n) for n in input().split()]
-graph = defaultdict(set)
 dep = defaultdict(int)
 
 for _ in range(m):
     a, b = [int(n) for n in input().split()]
-    graph[a].add(b)
-    graph[b].add(a)
     dep[a] += 1
     dep[b] += 1
 
