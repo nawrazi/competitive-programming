@@ -8,9 +8,5 @@ class Solution:
             return getGcd(b % a, a)
         
         gcd = getGcd(jug1Capacity, jug2Capacity)
-        for i in range(gcd, jug1Capacity + jug2Capacity + 1, gcd):
-            if i == targetCapacity:
-                return True
-            
-        return False
+        return targetCapacity % gcd == 0 and targetCapacity <= jug1Capacity + jug2Capacity
     
