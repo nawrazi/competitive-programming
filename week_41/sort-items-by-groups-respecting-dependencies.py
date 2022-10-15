@@ -5,25 +5,24 @@ class Solution:
         item_graph = defaultdict(set)
         item_indegrees = []
         group_map = defaultdict(list)
-        no_group = m
         for i, edges in enumerate(beforeItems):
             if group[i] == -1:
-                group[i] = no_group
-                no_group += 1
+                group[i] = m
+                m += 1
             item_indegrees.append(len(edges))
             group_map[group[i]].append(i)
             for e in edges:
                 item_graph[e].add(i)
                 
         group_graph = defaultdict(set)
-        group_indegrees = [set() for _ in range(no_group)]
+        group_indegrees = [set() for _ in range(m)]
         for i, edges in item_graph.items():
             for e in edges:
                 if group[i] != group[e]:
                     group_graph[group[i]].add(group[e])
                     group_indegrees[group[e]].add(group[i])
                     
-        for i in range(no_group):
+        for i in range(m):
             group_indegrees[i] = len(group_indegrees[i])
             
         def sortGroup(grp):
