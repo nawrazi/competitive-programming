@@ -2,43 +2,41 @@
 
 class Solution:
     def maximumInvitations(self, favorite: List[int]) -> int:
-        graph = {}
-        parent = [[] for _ in favorite]
-        indeg = [0 for _ in favorite]
+        fans = [[] for _ in favorite]
+        indegrees = [0 for _ in favorite]
         seen = set()
-        for idx, fav in enumerate(favorite):
-            graph[idx] = fav
-            parent[fav].append(idx)
-            indeg[fav] += 1
+        for fan, fav in enumerate(favorite):
+            fans[fav].append(fan)
+            indegrees[fav] += 1
             
         def getCycle(start):
             q = deque([start])
             cycle = set()
             while q:
-                cur = q.popleft()
-                cycle.add(cur)
+                emp = q.popleft()
+                cycle.add(emp)
                 
-                for nex in parent[cur] + [graph[cur]]:
-                    if nex not in seen:
-                        q.append(nex)
-                        seen.add(nex)
+                for ngh in fans[emp] + [favorite[emp]]:
+                    if ngh not in seen:
+                        q.append(ngh)
+                        seen.add(ngh)
                         
-            q = deque(filter(lambda c: indeg[c] == 0, cycle))
+            q = deque(filter(lambda c: indegrees[c] == 0, cycle))
             while q:
-                cur = q.popleft()
-                cycle.remove(cur)
+                emp = q.popleft()
+                cycle.remove(emp)
                 
-                indeg[graph[cur]] -= 1
-                if indeg[graph[cur]] == 0:
-                    q.append(graph[cur])
+                indegrees[favorite[emp]] -= 1
+                if indegrees[favorite[emp]] == 0:
+                    q.append(favorite[emp])
                     
             return cycle
         
         def getChain(emp, bad):
             chain = 0
-            for par in parent[emp]:
-                if par != bad:
-                    chain = max(chain, 1 + getChain(par, bad))
+            for fan in fans[emp]:
+                if fan != bad:
+                    chain = max(chain, 1 + getChain(fan, bad))
                     
             return chain
         
