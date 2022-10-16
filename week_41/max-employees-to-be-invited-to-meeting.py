@@ -3,7 +3,7 @@
 class Solution:
     def maximumInvitations(self, favorite: List[int]) -> int:
         graph = {}
-        parent = defaultdict(list)
+        parent = [[] for _ in favorite]
         indeg = [0 for _ in favorite]
         seen = set()
         for idx, fav in enumerate(favorite):
@@ -13,44 +13,32 @@ class Solution:
             
         def getComponent(start):
             q = deque([start])
-            comp = set()
+            component = set()
             while q:
                 cur = q.popleft()
-                comp.add(cur)
+                component.add(cur)
                 
-                if graph[cur] not in seen:
-                    q.append(graph[cur])
-                    seen.add(graph[cur])
-                    
-                for nex in parent[cur]:
+                for nex in parent[cur] + [graph[cur]]:
                     if nex not in seen:
                         q.append(nex)
                         seen.add(nex)
-                    
-            return comp
+                        
+            return component
         
-        def getCycle(comp):
-            q = deque()
-            for c in comp:
-                if indeg[c] == 0:
-                    q.append(c)
-                    
-            top = set()
+        def getCycle(component):
+            q = deque(filter(lambda c: indeg[c] == 0, component))
+            topsort = set()
             while q:
                 cur = q.popleft()
-                top.add(cur)
+                topsort.add(cur)
                 
-                nex = graph[cur]
-                indeg[nex] -= 1
-                if indeg[nex] == 0:
-                    q.append(nex)
+                indeg[graph[cur]] -= 1
+                if indeg[graph[cur]] == 0:
+                    q.append(graph[cur])
                     
-            return comp - top
+            return component - topsort
         
         def getChain(emp, bad):
-            if emp not in parent:
-                return 0
-            
             chain = 0
             for par in parent[emp]:
                 if par != bad:
@@ -59,7 +47,7 @@ class Solution:
             return chain
         
         circles, pairs = 0, 0
-        for idx, fav in enumerate(favorite):
+        for idx in range(len(favorite)):
             if idx not in seen:
                 cycle = getCycle(getComponent(idx))
                 if len(cycle) == 2:
