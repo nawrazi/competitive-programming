@@ -13,26 +13,26 @@ class Solution:
             
         def getCycle(start):
             q = deque([start])
-            component, topsort = set(), set()
+            cycle = set()
             while q:
                 cur = q.popleft()
-                component.add(cur)
+                cycle.add(cur)
                 
                 for nex in parent[cur] + [graph[cur]]:
                     if nex not in seen:
                         q.append(nex)
                         seen.add(nex)
                         
-            q = deque(filter(lambda c: indeg[c] == 0, component))
+            q = deque(filter(lambda c: indeg[c] == 0, cycle))
             while q:
                 cur = q.popleft()
-                topsort.add(cur)
+                cycle.remove(cur)
                 
                 indeg[graph[cur]] -= 1
                 if indeg[graph[cur]] == 0:
                     q.append(graph[cur])
                     
-            return component - topsort
+            return cycle
         
         def getChain(emp, bad):
             chain = 0
