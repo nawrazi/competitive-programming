@@ -11,9 +11,9 @@ class Solution:
             parent[fav].append(idx)
             indeg[fav] += 1
             
-        def getComponent(start):
+        def getCycle(start):
             q = deque([start])
-            component = set()
+            component, topsort = set(), set()
             while q:
                 cur = q.popleft()
                 component.add(cur)
@@ -23,11 +23,7 @@ class Solution:
                         q.append(nex)
                         seen.add(nex)
                         
-            return component
-        
-        def getCycle(component):
             q = deque(filter(lambda c: indeg[c] == 0, component))
-            topsort = set()
             while q:
                 cur = q.popleft()
                 topsort.add(cur)
@@ -49,7 +45,7 @@ class Solution:
         circles, pairs = 0, 0
         for idx in range(len(favorite)):
             if idx not in seen:
-                cycle = getCycle(getComponent(idx))
+                cycle = getCycle(idx)
                 if len(cycle) == 2:
                     emp1, emp2 = cycle.pop(), cycle.pop()
                     pairs += 2 + getChain(emp1, emp2) + getChain(emp2, emp1)
