@@ -6,13 +6,11 @@ class Solution:
         best = len(plants)
         while left <= right:
             mid = (left + right) // 2
-            if capacity > plants[mid] - offset:
+            if capacity >= plants[mid] - offset:
                 left = mid + 1
                 best = left
-            elif capacity < plants[mid] - offset:
-                right = mid - 1
             else:
-                return mid + 1
+                right = mid - 1
             
         return best
     
