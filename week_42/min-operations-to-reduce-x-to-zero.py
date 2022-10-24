@@ -15,7 +15,7 @@ class Solution:
         return -1
     
     def minOperations(self, nums: List[int], x: int) -> int:
-        prefix = []
+        prefix = [0]
         current = 0
         for i in range(len(nums)):
             prefix.append(nums[i] + current)
@@ -27,17 +27,13 @@ class Solution:
             suffix.append(nums[i] + current)
             current = suffix[-1]
         suffix.reverse()
+        suffix.append(0)
         
         best = inf
-        for i, num in enumerate(reversed(suffix)):
-            if prefix[i] == x:
-                best = min(best, i + 1)
-            if suffix[len(suffix) - i - 1] == x:
-                best = min(best, i + 1)
-                
-            index = self.search(prefix, x - num, len(suffix) - i - 2)
-            if index != -1:
-                best = min(best, i + index + 2)
+        for suf_idx, suf in enumerate(reversed(suffix)):
+            pre_idx = self.search(prefix, x - suf, len(suffix) - suf_idx - 1)
+            if pre_idx != -1:
+                best = min(best, suf_idx + pre_idx)
                 
         return best if best != inf else -1
     
