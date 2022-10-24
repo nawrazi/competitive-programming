@@ -24,7 +24,7 @@ class Solution:
                 for c in arr[idx]:
                     chars.remove(c)
                 
-            # dont use current word
+            # don't use current word
             concatenate(idx + 1)
             
         concatenate(0)
