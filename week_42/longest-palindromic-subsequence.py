@@ -12,9 +12,9 @@ class Solution:
             if s[left] == s[right]:
                 return 2 + palindromeLength(left + 1, right - 1)
             
-            longest = palindromeLength(left, right - 1)
+            longest = palindromeLength(left + 1, right - 1)
             longest = max(longest, palindromeLength(left + 1, right))
-            longest = max(longest, palindromeLength(left + 1, right - 1))
+            longest = max(longest, palindromeLength(left, right - 1))
             
             return longest
         
