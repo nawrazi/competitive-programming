@@ -15,6 +15,6 @@ class Solution:
             count[char] += 1
             cur_frogs += diff.get(char, 0)
             min_frogs = max(min_frogs, cur_frogs)
-                
+            
         return min_frogs if count['c'] == count['k'] else -1
     
