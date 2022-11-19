@@ -7,13 +7,12 @@ for _ in range(int(input())):
     blue = [int(i) for i in input().split()]
     
     max_r = 0
-    max_b = 0
-    
     pre_r = 0
     for r in red:
         pre_r += r
         max_r = max(max_r, pre_r)
         
+    max_b = 0
     pre_b = 0
     for b in blue:
         pre_b += b
