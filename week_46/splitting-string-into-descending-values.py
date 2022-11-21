@@ -10,10 +10,7 @@ class Solution:
             
             for i in range(idx, len(s)):
                 val = int(s[idx:i+1])
-                if len(current) >= 1 and val != current[-1] - 1:
-                    continue
-                
-                if len(current) < 2 or val == current[-1] - 1:
+                if len(current) == 0 or val == current[-1] - 1:
                     current.append(val)
                     if form(i + 1):
                         return True
