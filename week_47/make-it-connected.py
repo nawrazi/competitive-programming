@@ -22,8 +22,6 @@ def union(node1, node2):
         parents[parent2] = parent1
         return True
     
-    return 0
-
 offers = []
 for _ in range(o):
     n1, n2, c = [int(i) for i in input().split()]
