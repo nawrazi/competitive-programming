@@ -2,9 +2,8 @@
 
 class Solution:
     def totalCost(self, costs: List[int], k: int, candidates: int) -> int:
-        size = len(costs)
         heap = []
-        left, right = 0, size - 1
+        left, right = 0, len(costs) - 1
         while candidates and left <= right:
             heappush(heap, (costs[left], left, True))
             if left != right:
