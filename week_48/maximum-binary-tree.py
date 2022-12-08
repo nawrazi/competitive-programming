@@ -3,9 +3,6 @@
 class Solution:
     def constructMaximumBinaryTree(self, nums: List[int]) -> Optional[TreeNode]:
         def construct(left, right):
-            if left == right:
-                return TreeNode(nums[left])
-            
             if left > right:
                 return None
             
