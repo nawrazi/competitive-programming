@@ -22,16 +22,12 @@ class Solution:
                 parents[parent1] += parents[parent2]
                 parents[parent2] = parent1
 
-            for node1, node2 in restrictions:
-                if find(node1) == find(node2):
+            for u, v in restrictions:
+                if find(u) == find(v):
                     parents = backup
                     return False
 
             return True
 
-        result = []
-        for node1, node2 in requests:
-            result.append(union(node1, node2))
-
-        return result
+        return [union(u, v) for u, v in requests]
     
