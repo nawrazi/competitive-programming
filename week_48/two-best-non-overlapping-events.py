@@ -18,16 +18,16 @@ class Solution:
             return best
         
         @cache
-        def getProfit(event, first):
+        def getValue(event, first):
             if event >= len(events):
                 return 0
             
             next_event = findEarliest(events[event][1])
             if first:
-                return max(events[event][2] + getProfit(next_event, False), getProfit(event + 1, True))
+                return max(events[event][2] + getValue(next_event, False), getValue(event + 1, True))
             else:
-                return max(getProfit(event + 1, False), events[event][2])
+                return max(getValue(event + 1, False), events[event][2])
             
         events.sort()
-        return getProfit(0, True)
+        return getValue(0, True)
     
