@@ -36,13 +36,7 @@ class Solution:
             if second[idx2][1] <= first[idx1][1] <= second[idx2][2]:
                 return max(findMax(idx1 + 1, idx2), findMax(idx1, idx2 + 1))
             
-            if second[idx2][1] <= first[idx1][2] <= second[idx2][2]:
-                return max(findMax(idx1 + 1, idx2), findMax(idx1, idx2 + 1))
-            
             if first[idx1][1] <= second[idx2][1] <= first[idx1][2]:
-                return max(findMax(idx1 + 1, idx2), findMax(idx1, idx2 + 1))
-            
-            if first[idx1][1] <= second[idx2][2] <= first[idx1][2]:
                 return max(findMax(idx1 + 1, idx2), findMax(idx1, idx2 + 1))
             
             return first[idx1][0] + second[idx2][0]
