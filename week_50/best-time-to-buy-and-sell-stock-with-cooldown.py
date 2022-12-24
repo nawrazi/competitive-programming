@@ -11,13 +11,13 @@ class Solution:
                 dont = getProfit(day + 1, True, False)
                 if cooling:
                     return dont
-                else:
-                    return max(dont, getProfit(day + 1, False, False) - prices[day])
+                pick = getProfit(day + 1, False, False) - prices[day]
                 
             else:
-                pick = getProfit(day + 1, True, True) + prices[day]
                 dont = getProfit(day + 1, False, False)
-                return max(pick, dont)
-            
+                pick = getProfit(day + 1, True, True) + prices[day]
+                
+            return max(pick, dont)
+        
         return getProfit(0, True, False)
     
