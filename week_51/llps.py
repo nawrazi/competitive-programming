@@ -1,3 +1,5 @@
+# https://codeforces.com/gym/419374/problem/A
+
 from collections import Counter
 
 s = input()
