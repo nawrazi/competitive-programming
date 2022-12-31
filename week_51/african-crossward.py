@@ -1,3 +1,5 @@
+# https://codeforces.com/gym/419372/problem/C
+
 from collections import defaultdict
 
 rows, cols = [int(i) for i in input().split()]
