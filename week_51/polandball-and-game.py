@@ -1,3 +1,5 @@
+# https://codeforces.com/gym/419372/problem/B
+
 p, e = [int(i) for i in input().split()]
 poland, enemy, common = set(), set(), set()
 
