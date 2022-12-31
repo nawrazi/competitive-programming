@@ -1,3 +1,5 @@
+# https://codeforces.com/gym/419372/problem/D
+
 from collections import deque, defaultdict
 
 b, c = [int(i) for i in input().split()]
