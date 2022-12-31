@@ -1,4 +1,4 @@
-# https://codeforces.com/gym/419374/problem/A
+# https://codeforces.com/gym/419372/problem/A
 
 from collections import Counter
 
