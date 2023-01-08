@@ -7,26 +7,19 @@ class Solution:
             if idx >= len(stoneValue):
                 return 0
             
-            if alice:
-                max_score = -inf
-                stones = 0
-                for i in range(idx, min(idx + 3, len(stoneValue))):
-                    score = getScore(i + 1, False)
-                    stones += stoneValue[i]
-                    max_score = max(score + stones, max_score)
-                    
-                return max_score
+            optimal = -inf if alice else inf
+            stones = 0
             
-            else:
-                min_score = inf
-                stones = 0
-                for i in range(idx, min(idx + 3, len(stoneValue))):
-                    score = getScore(i + 1, True)
-                    stones += stoneValue[i]
-                    min_score = min(score - stones, min_score)
+            for i in range(idx, min(idx + 3, len(stoneValue))):
+                score = getScore(i + 1, not alice)
+                stones += stoneValue[i]
+                if alice:
+                    optimal = max(score + stones, optimal)
+                else:
+                    optimal = min(score - stones, optimal)
                     
-                return min_score
-            
+            return optimal
+        
         winner = getScore(0, True)
         
         if winner > 0:
