@@ -8,9 +8,6 @@ class Solution:
             graph[v].append(u)
             
         def getTime(node, parent):
-            if node is None:
-                return 0
-            
             time = 0
             for child in graph[node]:
                 if child != parent:
