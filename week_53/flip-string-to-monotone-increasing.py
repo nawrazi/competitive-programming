@@ -2,20 +2,16 @@
 
 class Solution:
     def minFlipsMonoIncr(self, s: str) -> int:
-        suffix = [0]
-        for c in reversed(s):
-            suffix.append(suffix[-1])
-            if c == '0':
-                suffix[-1] += 1
-        
-        suffix.reverse()
-        suffix.pop()
-        zeros = 0
+        ones = 0
+        zeros = s.count('0')
         flips = min(s.count('1'), s.count('0'))
         
-        for idx, ones in enumerate(suffix):
+        for idx in range(len(s)):
             flips = min(flips, zeros + ones)
-            zeros += int(s[idx])
-            
+            if s[idx] == '1':
+                ones += 1
+            else:
+                zeros -= 1
+                
         return flips
     
