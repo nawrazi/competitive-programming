@@ -20,7 +20,6 @@ class Solution:
         flips = min(s.count('1'), s.count('0'))
         for zeros, ones in zip(prefix, suffix):
             flips = min(flips, zeros + ones)
-            print(zeros + ones, flips)
             
         return flips
     
