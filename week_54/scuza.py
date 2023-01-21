@@ -35,6 +35,6 @@ for _ in range(int(input())):
             ans.append(0)
         else:
             ans.append(prefix[idx])
-            
+    
     print(*ans)
     
