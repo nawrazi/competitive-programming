@@ -2,23 +2,24 @@
 
 class Solution:
     def rotatedDigits(self, n: int) -> int:
-        self.good = 0
         digits = {0, 1, 2, 5, 6, 8, 9}
         asymmetric = {2, 5, 6, 9}
-        cur = []
+        cur = 0
+        good = 0
         
         def backtrack(valid, first):
-            if cur and int(''.join(cur)) > n:
+            nonlocal cur, good
+            if cur > n:
                 return
             
-            self.good += valid
+            good += valid
             
             for digit in digits:
                 if not (first and digit == 0):
-                    cur.append(str(digit))
+                    cur = (cur * 10) + digit
                     backtrack(valid or digit in asymmetric, False)
-                    cur.pop()
+                    cur //= 10
         
         backtrack(False, True)
-        return self.good
+        return good
     
