@@ -25,7 +25,6 @@ class SummaryRanges:
         min1, max1 = self.range[parent1]
         min2, max2 = self.range[parent2]
         self.range[parent1] = (min(min1, min2), max(max1, max2))
-        del self.range[parent2]
         
         self.parents[parent1] += self.parents[parent2]
         self.parents[parent2] = parent1
