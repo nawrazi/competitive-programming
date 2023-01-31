@@ -10,12 +10,12 @@ class Solution:
                 return 0
             
             score = getScore(idx + 1, top)
-            if stats[idx][1] == top[1] or stats[idx][0] >= top[0]:
-                score = max(score, stats[idx][0] + getScore(idx + 1, (max(stats[idx][0], top[0]), stats[idx][1])))
+            if stats[idx][0] >= top:
+                score = max(score, stats[idx][0] + getScore(idx + 1, stats[idx][0]))
                 
             return score
         
-        score = getScore(0, (-inf, -1))
+        score = getScore(0, 0)
         getScore.cache_clear()
         return score
     
