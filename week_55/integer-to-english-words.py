@@ -3,8 +3,8 @@
 class Solution:
     def numberToWords(self, num: int) -> str:
         ones = {
-            '0': '', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four', '5': 'Five',
-            '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine', '10': 'Ten'
+            '0': '', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four',
+            '5': 'Five', '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine'
         }
         tens = {
             '0': '', '2': 'Twenty', '3': 'Thirty', '4': 'Forty', '5': 'Fifty',
@@ -39,16 +39,13 @@ class Solution:
         if num == 0:
             return 'Zero'
         
-        num = str(num)
-        n = len(num)
-        if n % 3 != 0:
-            num = ('0' * (3 - (n % 3))) + num
-            
+        num = ('0' * (3 - (len(str(num)) % 3))) + str(num)
         word = []
-        power = len(num) // 3
+        power = (len(num) // 3) - 1
+        
         for idx in range(0, len(num), 3):
-            power -= 1
             word.append(toWord(num[idx:idx+3], power))
+            power -= 1
             
         return ' '.join(w for w in word if w)
     
