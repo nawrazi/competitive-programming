@@ -2,34 +2,23 @@
 
 class Solution:
     def numberToWords(self, num: int) -> str:
-        ones = {
-            '0': '', '1': 'One', '2': 'Two', '3': 'Three', '4': 'Four',
-            '5': 'Five', '6': 'Six', '7': 'Seven', '8': 'Eight', '9': 'Nine'
-        }
-        tens = {
-            '0': '', '2': 'Twenty', '3': 'Thirty', '4': 'Forty', '5': 'Fifty',
-            '6': 'Sixty', '7': 'Seventy', '8': 'Eighty', '9': 'Ninety'
-        }
-        teen = {
-            '10': 'Ten', '11': 'Eleven', '12': 'Twelve', '13': 'Thirteen', '14': 'Fourteen',
-            '15': 'Fifteen', '16': 'Sixteen', '17': 'Seventeen', '18': 'Eighteen', '19': 'Nineteen'
-        }
-        place = {
-            1: 'Thousand', 2: 'Million', 3: 'Billion'
-        }
+        ones = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']
+        tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety']
+        teen = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen']
+        place = ['', 'Thousand', 'Million', 'Billion']
         
         def toWord(num, power):
             word = []
             
             if num[0] != '0':
-                word.append(ones[num[0]])
+                word.append(ones[int(num[0])])
                 word.append('Hundred')
                 
             if num[1] == '1':
-                word.append(teen[num[1:]])
+                word.append(teen[int(num[1:]) - 10])
             else:
-                word.append(tens[num[1]])
-                word.append(ones[num[2]])
+                word.append(tens[int(num[1])])
+                word.append(ones[int(num[2])])
                 
             if power > 0 and num != '000':
                 word.append(place[power])
