@@ -20,7 +20,7 @@ class Solution:
                 word.append(tens[int(num[1])])
                 word.append(ones[int(num[2])])
                 
-            if power > 0 and num != '000':
+            if int(num) != 0:
                 word.append(place[power])
                 
             return ' '.join(w for w in word if w)
