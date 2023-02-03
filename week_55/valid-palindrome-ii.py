@@ -15,7 +15,6 @@ class Solution:
         while left <= right:
             if s[left] != s[right]:
                 return check(left + 1, right) or check(left, right - 1)
-            
             left += 1
             right -= 1
             
