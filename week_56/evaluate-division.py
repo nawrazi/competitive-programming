@@ -7,7 +7,7 @@ class Solution:
             graph[u].append((v, values[i]))
             graph[v].append((u, 1 / values[i]))
             
-        def getValue(start, target):
+        def evaluate(start, target):
             q = deque([(start, [])])
             seen = {start}
             
@@ -28,5 +28,5 @@ class Solution:
             return -1
         
         for query in queries:
-            yield getValue(*query)
+            yield evaluate(*query)
         
