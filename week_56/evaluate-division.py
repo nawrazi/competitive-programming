@@ -8,21 +8,18 @@ class Solution:
             graph[v].append((u, 1 / values[i]))
             
         def evaluate(start, target):
-            q = deque([(start, [])])
+            q = deque([(start, 1)])
             seen = {start}
             
             while q:
-                var, path = q.popleft()
+                var, total = q.popleft()
                 
                 if var in graph and var == target:
-                    res = 1
-                    for num in path:
-                        res *= num
-                    return res
+                    return total
                 
                 for ngh, val in graph[var]:
                     if ngh not in seen:
-                        q.append((ngh, path + [val]))
+                        q.append((ngh, total * val))
                         seen.add(ngh)
                         
             return -1
