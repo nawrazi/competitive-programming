@@ -2,5 +2,14 @@
 
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
-        return sorted(set(nums))[-3] if len(set(nums)) >= 3 else max(nums)
+        top3 = [-inf, -inf, -inf]
+        for num in set(nums):
+            top3.append(num)
+            top3.sort(reverse=True) # O(1)
+            top3.pop()
+            
+        while top3[-1] == -inf:
+            top3.pop()
+            
+        return top3[2] if len(top3) == 3 else top3[0]
     
