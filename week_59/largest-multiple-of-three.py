@@ -25,6 +25,6 @@ class Solution:
                 mods[1].pop()
                 mods[1].pop()
                 
-        res = ''.join(map(str, sorted(mods[0] + mods[1] + mods[2], reverse=True)))
+        res = ''.join(map(str, sorted(chain(*mods), reverse=True)))
         return str(int(res)) if res else ''
     
