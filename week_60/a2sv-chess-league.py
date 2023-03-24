@@ -21,7 +21,6 @@ def merge(nums):
     return win
 
 _, k = [int(i) for i in input().split()]
-nums = [int(i) for i in input().split()]
-nums = [(num, i) for i, num in enumerate(nums)]
+nums = [(int(num), i) for i, num in enumerate(input().split())]
 res = merge(nums)
 print(*[idx + 1 for _, idx in res])
