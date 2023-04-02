@@ -6,8 +6,8 @@ class Solution:
         mod = pow(10, 9) + 7
         
         def appleInRange(r1, c1, r2, c2):
-            for r in range(r1, r2 + 1):
-                for c in range(c1, c2 + 1):
+            for r in range(r1, r2):
+                for c in range(c1, c2):
                     if pizza[r][c] == 'A':
                         return True
         
