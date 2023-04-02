@@ -14,18 +14,18 @@ class Solution:
         @cache
         def countWays(row, col, k):
             if k == 1:
-                return 1 if appleInRange(row, col, rows - 1, cols - 1) else 0
+                return 1 if appleInRange(row, col, rows, cols) else 0
             
             count = 0
             found = False
             for r in range(row + 1, rows):
-                found = found or appleInRange(row, col, r - 1, cols - 1)
+                found = found or appleInRange(row, col, r, cols)
                 if found:
                     count += countWays(r, col, k - 1)
                     
             found = False
             for c in range(col + 1, cols):
-                found = found or appleInRange(row, col, rows - 1, c - 1)
+                found = found or appleInRange(row, col, rows, c)
                 if found:
                     count += countWays(row, c, k - 1)
                     
