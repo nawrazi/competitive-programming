@@ -10,16 +10,12 @@ class Solution:
             if pile >= len(piles):
                 return -inf
             
-            max_val = maxValue(k, pile + 1)
+            val, max_val = 0, maxValue(k, pile + 1)
             for i in range(len(piles[pile])):
-                val = piles[pile][i] + maxValue(k - i - 1, pile + 1)
-                max_val = max(max_val, val)
+                val += piles[pile][i]
+                max_val = max(max_val, val + maxValue(k - i - 1, pile + 1))
                 
             return max_val
         
-        for pile in piles:
-            for i in range(1, len(pile)):
-                pile[i] += pile[i - 1]
-                
         return maxValue(k, 0)
     
