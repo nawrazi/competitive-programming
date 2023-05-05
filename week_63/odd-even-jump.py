@@ -5,18 +5,13 @@ class Solution:
         n = len(arr)
         graph = [[-1 for _ in range(n)], [-1 for _ in range(n)]]
         
-        stack = []
-        for idx in sorted(range(n), key = lambda i: arr[i]):
-            while stack and idx >= stack[-1]:
-                graph[1][stack.pop()] = idx
-            stack.append(idx)
-            
-        stack = []
-        for idx in sorted(range(n), key = lambda i: arr[i], reverse=True):
-            while stack and idx >= stack[-1]:
-                graph[0][stack.pop()] = idx
-            stack.append(idx)
-            
+        def buildGraph(par):
+            stack = []
+            for idx in sorted(range(n), key = lambda i: arr[i], reverse=not par):
+                while stack and idx >= stack[-1]:
+                    graph[par][stack.pop()] = idx
+                stack.append(idx)
+        
         @cache
         def canReach(idx, par):
             if idx == n - 1:
@@ -25,10 +20,8 @@ class Solution:
             nex = graph[par][idx]
             return nex != -1 and canReach(nex, 1 - par)
         
-        good = 0
-        for start in range(n):
-            if canReach(start, 1):
-                good += 1
-                
-        return good
+        buildGraph(0)
+        buildGraph(1)
+        
+        return len([start for start in range(n) if canReach(start, 1)])
     
