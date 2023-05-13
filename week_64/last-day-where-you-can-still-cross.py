@@ -33,5 +33,3 @@ class Solution:
                     if union((r, c), (nr, nc)):
                         return len(cells) - day
                     
-        return 12
-    
