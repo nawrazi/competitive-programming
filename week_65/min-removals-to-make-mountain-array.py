@@ -28,7 +28,7 @@ class Solution:
                 
             if inc[~idx][0] == 1 or len(dp) == 1:
                 continue
-                
+            
             mountain = inc[~idx][0] + len(dp) - int(nums[inc[~idx][1]] == num)
             longest = max(longest, mountain)
             
