@@ -10,6 +10,6 @@ class Solution:
                 dp.append(num)
             else:
                 dp[pos] = num
-                
+            
             yield pos + 1
         
