@@ -37,10 +37,7 @@ class Solution:
                 if node.word:
                     extra = min(extra, search(idx))
             
-            if idx >= len(s):
-                extra = min(extra, 1 + search(org + 1))
-            
-            return extra
+            return min(extra, 1 + search(org + 1))
         
         return search(0)
     
