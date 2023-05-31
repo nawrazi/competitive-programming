@@ -21,8 +21,7 @@ class Solution:
                 parents[parent2] = parent1
         
         def factorize(num):
-            n = num
-            d = 2
+            n, d = num, 2
             
             while d * d <= n:
                 while n % d == 0:
@@ -37,18 +36,8 @@ class Solution:
         
         groups = defaultdict(list)
         for num in nums:
-            groups[find(num)].append(num)
+            heappush(groups[find(num)], num)
         
-        for parent in groups:
-            groups[parent].sort(reverse=True)
-        
-        result = []
-        for num in nums:
-            result.append(groups[find(num)].pop())
-        
-        for i in range(1, len(result)):
-            if result[i] < result[i - 1]:
-                return False
-        
-        return True
+        result = [heappop(groups[find(num)]) for num in nums]
+        return all(result[i] >= result[i - 1] for i in range(1, len(result)))
     
