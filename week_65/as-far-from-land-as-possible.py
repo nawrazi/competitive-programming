@@ -4,7 +4,7 @@ class Solution:
     def maxDistance(self, grid: List[List[int]]) -> int:
         n = len(grid)
         directions = [(0,1), (0,-1), (1,0), (-1,0)]
-        inBound = lambda r, c: 0 <= r < n and 0 <= c < n
+        valid = lambda r, c: 0 <= r < n and 0 <= c < n and grid[r][c] == 0
         heap = []
         best = {}
         
@@ -18,7 +18,7 @@ class Solution:
             
             for x, y in directions:
                 nr, nc = row + x, col + y
-                if inBound(nr, nc) and grid[nr][nc] == 0 and dist + 1 < best.get((nr, nc), inf):
+                if valid(nr, nc) and dist + 1 < best.get((nr, nc), inf):
                     heappush(heap, (dist + 1, nr, nc))
                     best[(nr, nc)] = dist + 1
         
